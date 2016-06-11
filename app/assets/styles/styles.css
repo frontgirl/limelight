@@ -1,3 +1,108 @@
+/* sprites */
+.svg-comment, .svg-download, .svg-eye, .svg-facebook, .svg-googleplus, .svg-home, .nav__home, .svg-pinterest, .svg-twitter {
+  background: url("svg/sprite.view.svg") no-repeat; }
+
+.svg-comment {
+  background-position: 0 100%; }
+
+.svg-comment-dims {
+  width: 80px;
+  height: 70px; }
+
+.svg-download {
+  background-position: 0 0; }
+
+.svg-download-dims {
+  width: 100px;
+  height: 85px; }
+
+.svg-eye {
+  background-position: 41.666666666666664% 0; }
+
+.svg-eye-dims {
+  width: 100px;
+  height: 56px; }
+
+.svg-facebook {
+  background-position: 68.96551724137932% 0; }
+
+.svg-facebook-dims {
+  width: 50px;
+  height: 90px; }
+
+.svg-googleplus {
+  background-position: 99.84025559105432% 48.203592814371255%; }
+
+.svg-googleplus-dims {
+  width: 89.6px;
+  height: 88px; }
+
+.svg-home, .nav__home {
+  background-position: 100% 0; }
+
+.svg-home-dims {
+  width: 90px;
+  height: 80.5px; }
+
+.svg-pinterest {
+  background-position: 0 54.83870967741935%; }
+
+.svg-pinterest-dims {
+  width: 77.8px;
+  height: 100px; }
+
+.svg-twitter {
+  background-position: 31.370967741935484% 47.16981132075472%; }
+
+.svg-twitter-dims {
+  width: 92px;
+  height: 74.8px; }
+
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -208,6 +313,14 @@ th {
   font-weight: 800;
   font-style: normal; }
 
+* {
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
 html, body {
   color: #111111;
   font-family: "Proxima Nova", Arial, sans-serif;
@@ -221,111 +334,44 @@ html, body {
     display: table;
     clear: both; }
 
-/* sprites */
-.svg-comment, .svg-download, .svg-eye, .svg-facebook, .svg-googleplus, .svg-home, .svg-pinterest, .svg-twitter {
-  background: url("svg/sprite.view.svg") no-repeat; }
+.jumbotron {
+  padding: 30px 0;
+  background-color: #f1f1f1; }
 
-.svg-comment {
-  background-position: 0 100%; }
+blockquote {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+  position: relative;
+  padding: 0 80px;
+  margin: 0; }
+  blockquote:before, blockquote:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #86c840 url(./sprites/sprite.png) no-repeat;
+    width: 46px;
+    height: 46px;
+    -webkit-border-radius: 100%;
+    -khtml-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%; }
+  blockquote:before {
+    left: 0;
+    background-position: -39px -46px; }
+  blockquote:after {
+    right: 0;
+    bottom: 0;
+    background-position: 11px -43px; }
 
-.svg-comment-dims {
-  width: 80px;
-  height: 70px; }
+h1, .h1 {
+  font-size: 36px;
+  margin: 0;
+  font-family: "Nexa Slab", serif;
+  font-weight: 800; }
 
-.svg-download {
-  background-position: 0 0; }
-
-.svg-download-dims {
-  width: 100px;
-  height: 85px; }
-
-.svg-eye {
-  background-position: 41.666666666666664% 0; }
-
-.svg-eye-dims {
-  width: 100px;
-  height: 56px; }
-
-.svg-facebook {
-  background-position: 68.96551724137932% 0; }
-
-.svg-facebook-dims {
-  width: 50px;
-  height: 90px; }
-
-.svg-googleplus {
-  background-position: 99.84025559105432% 48.203592814371255%; }
-
-.svg-googleplus-dims {
-  width: 89.6px;
-  height: 88px; }
-
-.svg-home {
-  background-position: 100% 0; }
-
-.svg-home-dims {
-  width: 90px;
-  height: 80.5px; }
-
-.svg-pinterest {
-  background-position: 0 54.83870967741935%; }
-
-.svg-pinterest-dims {
-  width: 77.8px;
-  height: 100px; }
-
-.svg-twitter {
-  background-position: 31.370967741935484% 47.16981132075472%; }
-
-.svg-twitter-dims {
-  width: 92px;
-  height: 74.8px; }
-
-/*
-SCSS variables are information about icon's compiled state, stored under its original file name
-
-.icon-home {
-  width: $icon-home-width;
-}
-
-The large array-like variables contain all information about a single icon
-$icon-home: x y offset_x offset_y width height total_width total_height image_path;
-
-At the bottom of this section, we provide information about the spritesheet itself
-$spritesheet: width height image $spritesheet-sprites;
-*/
-/*
-The provided mixins are intended to be used with the array-like variables
-
-.icon-home {
-  @include sprite-width($icon-home);
-}
-
-.icon-email {
-  @include sprite($icon-email);
-}
-
-Example usage in HTML:
-
-`display: block` sprite:
-<div class="icon-home"></div>
-
-To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
-
-// CSS
-.icon {
-  display: inline-block;
-}
-
-// HTML
-<i class="icon icon-home"></i>
-*/
-/*
-The `sprites` mixin generates identical output to the CSS template
-  but can be overridden inside of SCSS
-
-@include sprites($spritesheet-sprites);
-*/
 /* all blocks */
 .header__logo {
   display: block;
@@ -335,3 +381,92 @@ The `sprites` mixin generates identical output to the CSS template
   background-position: 0px 0px;
   width: 170px;
   height: 34px; }
+
+.header__navs {
+  float: right; }
+
+.nav:hover .nav__i.active:not(:hover):after {
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-opacity: 0;
+  -khtml-opacity: 0;
+  -moz-opacity: 0;
+  -ms-opacity: 0;
+  -o-opacity: 0;
+  opacity: 0; }
+
+.nav__i {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  position: relative; }
+  .nav__i + .nav__i {
+    margin-left: 30px; }
+  .nav__i:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 100%;
+    -khtml-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -khtml-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #86c840;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-opacity: 0;
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+    -o-opacity: 0;
+    opacity: 0;
+    -webkit-transition: 0.2s ease opacity;
+    -khtml-transition: 0.2s ease opacity;
+    -moz-transition: 0.2s ease opacity;
+    -ms-transition: 0.2s ease opacity;
+    -o-transition: 0.2s ease opacity;
+    transition: 0.2s ease opacity; }
+  .nav__i.active:after, .nav__i:hover:after {
+    filter: alpha(opacity=100);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-opacity: 1;
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1; }
+
+.nav__lk {
+  font-size: 16px;
+  font-family: "Nexa Slab", serif;
+  font-weight: 800;
+  color: #111111;
+  text-decoration: none; }
+
+.nav__home {
+  display: block;
+  width: 13px;
+  height: 12px;
+  margin: 3px 0 4px;
+  background-image: url(./sprites/sprite.view.svg);
+  -webkit-background-size: 49px auto;
+  -khtml-background-size: 49px auto;
+  -moz-background-size: 49px auto;
+  -ms-background-size: 49px auto;
+  -o-background-size: 49px auto;
+  background-size: 49px auto; }
+
+.section-header__stl {
+  font-weight: 500;
+  color: #aaaaaa; }

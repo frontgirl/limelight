@@ -10,4 +10,7 @@
     @include sprite-width($lime-logo);
     @include sprite-height($lime-logo);
   }
+  &__navs{
+    float: right;
+  }
 }

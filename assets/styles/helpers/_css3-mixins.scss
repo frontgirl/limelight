@@ -411,3 +411,8 @@
     clear: both;
   }
 }
+@mixin circle($dim) {
+  width: $dim;
+  height: $dim;
+  @include border-radius(100%);
+}

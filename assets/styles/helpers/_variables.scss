@@ -20,3 +20,8 @@ $content-max-width: 940px;
 
 $svg-sprite-path : './sprites/sprite.view.svg';
 $sprite-png-path : './sprites/sprite.png';
+
+@mixin font-heading(){
+  font-family: $font-family-headings;
+  font-weight: 800;
+}

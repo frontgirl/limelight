@@ -1,13 +1,14 @@
+/* sprites */
+
+@import "sprites/view/sprite";
+@import "sprites/png-sprite";
+
 @import 'helpers/_normalize';
 @import 'helpers/_css3-mixins';
 @import 'helpers/_variables';
 @import 'helpers/_fonts';
 @import 'helpers/_general';
-
-/* sprites */
-
-@import "sprites/view/sprite";
-@import "sprites/png-sprite";
+@import 'helpers/_type';
 
 /* all blocks */
 
@@ -15,3 +16,4 @@
 @import "blocks/header";
 @import "blocks/navs";
 @import "blocks/footer";
+@import "blocks/section";

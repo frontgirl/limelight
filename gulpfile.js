@@ -30,6 +30,7 @@ gulp.task('sprite', function() {
 	var spriteData =
 		gulp.src('assets/images/*.png') // путь, откуда берем картинки для спрайта
 			.pipe(spritesmith({
+				padding: 30,
 				imgName: 'sprite.png',
 				cssName: 'png-sprite.scss'
 			}));
@@ -92,7 +93,6 @@ gulp.task('minify-css', function() {
 	return gulp.src('app/assets/styles/*.css')
 		.pipe(cleanCSS({compatibility: 'ie8'}))
 		.pipe(gulp.dest('app/assets/styles/'))
-
 });
 
 
@@ -105,6 +105,7 @@ gulp.task('watch', function () {
 gulp.task('dist', function () {
 	return runSequence(
 		['sass'],           // queue 1
-		['concat', 'copy','minify-css', 'sprite', 'svg-sprite'] // queue 2
+		[ 'copy', 'sprite', 'svg-sprite', 'concat'], // queue 2
+		['minify-css'] // queue 3
 	);
 });

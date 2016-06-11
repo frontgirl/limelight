@@ -1,0 +1,39 @@
+.jumbotron{
+  padding: 30px 0;
+  background-color: $lightgray;
+}
+
+blockquote{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+  position: relative;
+  padding: 0 80px;
+  margin: 0;
+  &:before, &:after{
+    content: "";
+    position: absolute;
+    display: block;
+    background: $primary-color url(#{$sprite-png-path}) no-repeat;
+
+    @include circle(46px);
+
+  }
+  &:before{
+    //@include sprite-position($quote-left);
+    left: 0;
+    background-position: -39px -46px;
+
+  }
+  &:after{
+    //@include sprite-position($quote-right);
+    right: 0;
+    bottom: 0;
+    background-position: 11px -43px;
+  }
+}
+h1, .h1{
+  font-size: 36px;
+  margin: 0;
+  @include font-heading();
+}

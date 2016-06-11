@@ -1,0 +1,55 @@
+.nav{
+  &:hover{
+    .nav__i{
+      &.active:not(:hover){
+        &:after{
+          @include opacity(0);
+        }
+      }
+    }
+  }
+  &__i{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    position: relative;
+    & + &{
+      margin-left: 30px;
+    }
+    &:after{
+      content: "";
+      @include circle(10px);
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      @include transform(translateX(-50%));
+      background-color: $primary-color;
+      @include opacity(0);
+      @include transition(.2s ease opacity);
+    }
+    &.active, &:hover{
+      &:after{
+        @include opacity(1);
+      }
+    }
+  }
+  &__lk{
+    font-size: 16px;
+    @include font-heading();
+    color: $text-color;
+    text-decoration: none;
+  }
+  &__home{
+    display: block;
+
+    @extend .svg-home;
+
+    width: 13px;
+    height: 12px;
+    margin: 3px 0 4px;
+
+    background-image: url(#{$svg-sprite-path});
+    @include background-size(49px auto);
+  }
+}
