@@ -1,0 +1,11 @@
+html, body{
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+}
+
+.container{
+  max-width: $content-max-width;
+  margin: 0 auto;
+  @include clearfix;
+}

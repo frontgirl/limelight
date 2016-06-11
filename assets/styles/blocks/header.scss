@@ -1,0 +1,13 @@
+.header{
+  &__logo{
+    display: block;
+    float: left;
+
+    margin: 35px 0;
+
+    background: url(#{$sprite-png-path});
+    @include sprite-position($lime-logo);
+    @include sprite-width($lime-logo);
+    @include sprite-height($lime-logo);
+  }
+}

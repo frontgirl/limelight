@@ -1,0 +1,22 @@
+//colors
+
+$white : #fff;
+$lightgray: #f1f1f1;
+$gray: #aaaaaa;
+$graydark: #222222;
+$limegreen: #86c840;
+$almostblack: #111111;
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: $limegreen;
+$text-color: $almostblack;
+$text-gray: $gray;
+
+$build : '../';
+$font-family-base : 'Proxima Nova', Arial, sans-serif;
+$font-family-headings: 'Nexa Slab', serif;
+$font-size-base: 14px;
+$content-max-width: 940px;
+
+$svg-sprite-path : './sprites/sprite.view.svg';
+$sprite-png-path : './sprites/sprite.png';
