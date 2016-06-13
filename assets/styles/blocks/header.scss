@@ -1,16 +1,88 @@
-.header{
-  &__logo{
-    display: block;
-    float: left;
+.header {
+    &__logo {
+        display: block;
+        float: left;
+        margin: 32px 0 40px;
+        background: url(#{$sprite-png-path});
+        @include sprite-position($lime-logo);
+        @include sprite-width($lime-logo);
+        @include sprite-height($lime-logo);
+    }
+    &__navs {
+        float: right;
+        @media (max-width: $screen-breakpoint) {
+            position: absolute;
+            width: 0;
+            right: 0;
+            z-index: 9;
+            overflow: hidden;
 
-    margin: 32px 0 40px;
+            @include box-shadow (-1px, 1px, 4px, $lightgray);
 
-    background: url(#{$sprite-png-path});
-    @include sprite-position($lime-logo);
-    @include sprite-width($lime-logo);
-    @include sprite-height($lime-logo);
-  }
-  &__navs{
-    float: right;
-  }
+            @include transition(.5s width ease);
+            .nav-open &{
+                width: 300px;
+            }
+        }
+    }
+    &__nav-collapser {
+        border: 0;
+        float: right;
+        background-color: $transparent;
+        height: 40px;
+        padding: 0;
+        width: 50px;
+        margin: 28px 10px;
+        position: relative;
+        z-index: 10;
+
+        @media (min-width: ($screen-breakpoint + 1)) {
+            display: none;
+        }
+        &:focus{
+          outline: 0;
+        }
+        span {
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            background: $primary-color;
+            @include border-radius(1px);
+            opacity: 1;
+            left: 0;
+            @include transform(rotate(0deg));
+            @include transition(.25s ease-in-out);
+            &:nth-child(1) {
+                top: 0px;
+                @include transform-origin (left center);
+            }
+            &:nth-child(2) {
+                top: 15px;
+                @include transform-origin (left center);
+            }
+            &:nth-child(3) {
+                top: 30px;
+                @include transform-origin (left center);
+            }
+        }
+        .nav-open & {
+            span {
+                &:nth-child(1) {
+                    @include transform (rotate(45deg));
+                    top: -3px;
+                    left: 8px;
+                }
+                &:nth-child(2) {
+                    width: 0%;
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    @include transform (rotate(-45deg));
+                    top: 31px;
+                    left: 8px;
+                }
+            }
+        }
+    }
 }

@@ -4,7 +4,7 @@ $(function() {
 
 			return {
 				init : function() {
-					//DummyModule.init();
+					HeaderCollapse.init();
 				}
 			}
 		})()
@@ -12,10 +12,14 @@ $(function() {
 	/**
 	 * Dummy Module Example
 	 */
-		,DummyModule = (function(){
+		,HeaderCollapse = (function(){
+			var $collapserBtn = $('#nav-collapser'),
+				$header = $('#header-top');
 			return {
 				init : function() {
-					// do something
+					$collapserBtn.on('click',function(){
+						$header.toggleClass('nav-open');
+					})
 				}
 			}
 		})()

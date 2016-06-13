@@ -11,6 +11,10 @@ blockquote{
   position: relative;
   padding: 0 80px;
   margin: 0;
+  @media (max-width: $screen-breakpoint) {
+    font-size: 20px;
+    padding: 0 50px;
+  }
 
   &:before, &:after{
     content: "";
