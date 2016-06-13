@@ -8,7 +8,8 @@ html, body{
 }
 
 .container{
-  max-width: $content-max-width;
+  max-width: ($content-max-width + 40);
   margin: 0 auto;
+  padding: 0 20px;
   @include clearfix;
 }

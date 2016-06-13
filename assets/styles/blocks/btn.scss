@@ -1,0 +1,12 @@
+.btn{
+	display: inline-block;
+	background-color: $primary-color;
+	color: $white;
+	font-weight: 600;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 1em;
+	$color: rgba($text-color, .7);
+	@include text-shadow(0, 1px, 3px, $color);
+	@include border-radius(4px);
+}

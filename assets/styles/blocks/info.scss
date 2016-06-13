@@ -1,0 +1,63 @@
+.inf{
+    font-size: 12px;
+        background-color: $almostblack;
+        color: $white;
+        text-align: right;
+        padding: 12px 14px 12px 10px;
+        @include border-radius(0 0 4px 4px);
+    &__value{
+        display: inline-block;
+        vertical-align: middle;
+        min-width: 20px;
+        text-align: left;
+    }
+&__date {
+        float: left;
+    }
+    &__watches,
+    &__comments,
+    &__downloads {
+          display: inline-block;
+          vertical-align: middle;
+          
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url(#{$svg-sprite-path});
+            @include background-size(176px auto);
+            width: 15px;
+            height: 15px;
+            margin-right: 2px;
+        }
+    }
+    &__watches {
+
+        &:before {
+            @extend .svg-eye;
+            width: 22px;
+            background-position: 8% 36%;
+            margin-right: 4px;
+            //@include background-size(72px auto);
+        }
+    }
+    &__comments {
+        margin-left: 10px;
+        margin-right: 5px;
+        &:before {
+            @extend .svg-comment;
+            width: 22px;
+            background-position: 6% 8%;
+            @include background-size(118px auto);
+        }
+    }
+    &__downloads {
+        &:before {
+            @extend .svg-download;
+            width: 14px;
+            height: 14px;
+            background-position: 40% 8%;
+            @include background-size(112px auto);
+        }
+    }
+}

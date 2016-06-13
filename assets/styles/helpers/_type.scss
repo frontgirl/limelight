@@ -1,5 +1,5 @@
 .jumbotron{
-  padding: 30px 0;
+  padding: 37px 0;
   background-color: $lightgray;
 }
 
@@ -7,9 +7,11 @@ blockquote{
   text-align: center;
   font-size: 28px;
   font-weight: 300;
+  line-height: 1.4em;
   position: relative;
   padding: 0 80px;
   margin: 0;
+
   &:before, &:after{
     content: "";
     position: absolute;
@@ -19,21 +21,20 @@ blockquote{
     @include circle(46px);
 
   }
+
   &:before{
     //@include sprite-position($quote-left);
     left: 0;
-    background-position: -39px -46px;
+    background-position: -43px -50px;
+    margin-top: 8px;
 
   }
+  
   &:after{
     //@include sprite-position($quote-right);
     right: 0;
     bottom: 0;
-    background-position: 11px -43px;
+    background-position: 12px -48px;
+    margin-bottom: 10px;
   }
-}
-h1, .h1{
-  font-size: 36px;
-  margin: 0;
-  @include font-heading();
 }

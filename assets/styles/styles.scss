@@ -11,9 +11,12 @@
 @import 'helpers/_type';
 
 /* all blocks */
-
+@import "blocks/btn";
 @import "blocks/layout";
 @import "blocks/header";
 @import "blocks/navs";
 @import "blocks/footer";
 @import "blocks/section";
+@import "blocks/freebies";
+@import "blocks/info";
+@import "blocks/social"

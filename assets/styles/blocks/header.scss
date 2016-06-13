@@ -3,7 +3,7 @@
     display: block;
     float: left;
 
-    margin: 35px 0;
+    margin: 32px 0 40px;
 
     background: url(#{$sprite-png-path});
     @include sprite-position($lime-logo);

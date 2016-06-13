@@ -41,6 +41,15 @@ gulp.task('sprite', function() {
 
 // svg sprite basic configuration example
 config                  = {
+	shape: {
+		dimension       : {         // Set maximum dimensions
+            maxWidth    : 20,
+            maxHeight   : 20
+        },
+		spacing: {
+			padding: 30
+		}
+	},
 	mode                : {
 		view            : {         // Activate the «view» mode
 			bust        : false,
@@ -57,7 +66,7 @@ gulp.task('svg-sprite', function() {
 });
 
 gulp.task('copy', function () {
-	var copyFontsPaths = [
+	var copyPaths = [
 		/* Fonts section */
 		{src: 'assets/fonts/**/*', dest: 'app/assets/fonts/'},
 		/* Sprites  */
@@ -65,8 +74,8 @@ gulp.task('copy', function () {
 		{src: 'assets/styles/sprites/sprite.png', dest: 'app/assets/styles/sprites'}
 	];
 
-	for (var i in copyFontsPaths) {
-		var prop = copyFontsPaths[i];
+	for (var i in copyPaths) {
+		var prop = copyPaths[i];
 		gulp.src(prop.src).pipe(gulp.dest(prop.dest));
 	}
 

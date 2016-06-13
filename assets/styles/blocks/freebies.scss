@@ -1,0 +1,102 @@
+.freebies{
+  text-align: center;
+
+  &__lst {
+    @include clearfix;
+    font-size: 0;
+    text-align: justify;
+    padding: 0 2px;
+    margin-bottom: 11px;
+    @media (max-width: ($content-max-width - 1)) {
+      text-align: center;
+    }
+    &:after{
+      content: "";
+      display: inline-block;
+      width: 100%;
+    
+    }
+  }
+  &__btn-more{
+    text-transform: uppercase;
+    padding: 12px 25px 10px;
+    &:after{
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+            margin: 0 0 0 14px;
+            @include sprite-width($arrow-right);
+            @include sprite-height($arrow-right);
+            background: $primary-color url(#{$sprite-png-path}) no-repeat;
+            @include sprite-position($arrow-right);
+            
+    }
+
+  }
+}
+
+.freebie {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: $text-color;
+    text-align: left;
+    overflow: hidden;
+    font-size: $font-size-base;
+    width: 298px;
+    margin-bottom: 42px;
+    @media (max-width: ($content-max-width - 1)) {
+      margin: 0 10px 42px;
+    }
+    &-hovering {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        @include transform(translateY(100%));
+        @include transition(.5s transform ease);
+        padding: 4px;
+    }
+    &__img {
+        background-color: $lightgray;
+        height: 224px;
+        @include border-radius(6px);
+        position: relative;
+        overflow: hidden;
+        &:hover{
+            .freebie-hovering{
+                @include transform(translateX(0));
+            }
+        }
+    }
+    
+    
+    &-header {
+        padding: 20px 52px 5px 13px;
+        position: relative;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            margin-top: 6px;
+            @include transform(translateY(-50%));
+            background: $primary-color url(#{$sprite-png-path}) no-repeat;
+            @include circle(32px);
+            background-position: -98px -57px;
+            //@include sprite-position($arrow-right);
+        }
+        &__tl {
+            font-size: 16px;
+            @include font-heading();
+            height: 1.2em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &__stl {
+            font-size: 14px;
+            color: $text-gray;
+        }
+    }
+}

@@ -1,6 +1,8 @@
 .nav{
+  padding: 0;
+  margin: 0;
   &:hover{
-    .nav__i{
+    &.nav--top .nav__i{
       &.active:not(:hover){
         &:after{
           @include opacity(0);
@@ -11,33 +13,44 @@
   &__i{
     display: inline-block;
     vertical-align: top;
-    margin-top: 40px;
-    padding-bottom: 20px;
-    position: relative;
+    font-weight: 600;
     & + &{
-      margin-left: 30px;
+      margin-left: 25px;
     }
-    &:after{
-      content: "";
-      @include circle(10px);
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      @include transform(translateX(-50%));
-      background-color: $primary-color;
-      @include opacity(0);
-      @include transition(.2s ease opacity);
-    }
-    &.active, &:hover{
-      &:after{
-        @include opacity(1);
+    .nav--top &{
+      font-weight: 300;
+      margin-top: 42px;
+      padding-bottom: 15px;
+      position: relative;
+      & + .nav__i{
+        margin-left: 37px;
       }
+
+      &:after{
+        content: "";
+        @include circle(9px);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        @include transform(translateX(-50%));
+        background-color: $primary-color;
+        @include opacity(0);
+        @include transition(.2s ease opacity);
+      }
+      &.active, &:hover{
+        &:after{
+          @include opacity(1);
+        }
+      }
+      .nav__lk{
+      color: $text-color;
+      font-size: 16px;
+      @include font-heading();
+    }
     }
   }
   &__lk{
-    font-size: 16px;
-    @include font-heading();
-    color: $text-color;
+    color: $graydark;
     text-decoration: none;
   }
   &__home{
@@ -47,9 +60,10 @@
 
     width: 13px;
     height: 12px;
-    margin: 3px 0 4px;
+    margin: 1px 0 6px;
 
     background-image: url(#{$svg-sprite-path});
-    @include background-size(49px auto);
+    @include background-size(112px auto);
+    background-position: 39% 62%;
   }
 }

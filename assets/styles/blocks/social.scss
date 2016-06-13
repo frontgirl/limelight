@@ -1,0 +1,41 @@
+.social{
+	font-size: 0;
+	padding: 0;
+	list-style: none;
+	margin-right: 42px;
+
+	&__i{
+		display: inline-block;
+		& + & {
+			margin-left: 10px;
+		}
+	}
+	&__lk{
+		display: block;
+		@include circle(40px);
+		background-color: $almostblack;
+			background-image: url(#{$svg-sprite-path});
+    		@include background-size(154px auto);
+		
+		
+		&--tw{
+				@extend .svg-twitter;
+				background-position: 0% 100%;
+		
+		}
+		&--fb{
+		
+				@extend .svg-facebook;
+				background-position: 69% 0%;
+				}
+		&--gp{
+				@extend .svg-googleplus;
+		}
+		&--pt{
+				@include background-size(170px auto);
+				@extend .svg-pinterest;
+				background-position: 100% 1%;
+			
+		}
+	}
+}
